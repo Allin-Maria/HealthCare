@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import joblib
+
 
 # Load trained Random Forest model
 model = joblib.load("ckd_rf_model.joblib")
