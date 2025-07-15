@@ -1,5 +1,8 @@
 import streamlit as st
 import pandas as pd
+import joblib
+model = joblib.load("ckd_rf_model.joblib")
+
 
 
 # Load trained Random Forest model
@@ -44,10 +47,15 @@ if st.sidebar.button("Predict"):
         'BMIBaseline', 'TimeToEventMonths'
     ])
     
-    prediction = model.predict(input_data)[0][1]
-    prob = model.predict_proba(input_data)[0][1]
+   if st.sidebar.button("Predict"):
+      prediction = model.predict(input_data)[0]
+      proba = model.predict_proba(input_data)[0][1]
 
     if prediction == 1:
-        st.error(f"⚠️ High Risk of CKD\n\nProbability: {prob:.2%}")
+        st.error(f"⚠️ High Risk of CKD\n\nProbability: {proba:.2%}")
     else:
-        st.success(f"✅ Low Risk of CKD\n\nProbability: {prob:.2%}")
+        st.success(f"✅ Low Risk of CKD\n\nProbability: {proba:.2%}")
+        
+        prediction = model.predict(...)[0]
+        probability = model.predict_proba(...)[0][1]
+
