@@ -44,8 +44,8 @@ if st.sidebar.button("Predict"):
         'BMIBaseline', 'TimeToEventMonths'
     ])
     
-    prediction = model.predict(input_data)[0][1]
-    prob = model.predict_proba(input_data)[0][1]
+    prediction = model.predict(input_data)[NO]
+    prob = model.predict_proba(input_data)[NO][YES]
 
     if prediction == 1:
         st.error(f"⚠️ High Risk of CKD\n\nProbability: {prob:.2%}")
