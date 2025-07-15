@@ -47,7 +47,6 @@ if st.sidebar.button("Predict"):
         'BMIBaseline', 'TimeToEventMonths'
     ])
     
-   if st.sidebar.button("Predict"):
       prediction = model.predict(input_data)[0]
       proba = model.predict_proba(input_data)[0][1]
 
