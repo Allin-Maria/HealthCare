@@ -3,7 +3,7 @@ import pandas as pd
 
 
 # Load trained Random Forest model
-model = joblib.load("ckd_rf_model.joblib")
+
 
 st.title("🔬 CKD Risk Predictor")
 st.markdown("This app predicts the risk of Chronic Kidney Disease (Stage 3B or worse)")
